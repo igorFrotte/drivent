@@ -1,4 +1,5 @@
 import { prisma } from "@/config";
+import { CardData, Ticket } from "@/protocols";
 
 async function findEnrollmentById(id: number) {
   return prisma.enrollment.findUnique({
@@ -16,9 +17,21 @@ async function findPaymentByTicket(id: number) {
   });
 }
 
+async function insertPayment(ticket: Ticket, cardData: CardData) {
+  return await prisma.payment.create({
+    data: {
+      ticketId: ticket.id,
+      value: ticket.price,
+      cardIssuer: cardData.issuer,
+      cardLastDigits: String(cardData.number)
+    }
+  });
+}
+
 const paymentRepository = {
   findEnrollmentById,
-  findPaymentByTicket
+  findPaymentByTicket,
+  insertPayment
 };
 
 export default paymentRepository;

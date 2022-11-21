@@ -1,3 +1,5 @@
+import { TicketStatus } from "@prisma/client";
+
 export type ApplicationError = {
   name: string;
   message: string;
@@ -29,3 +31,21 @@ export type RequestError = {
   name: string,
   message: string,
 };
+
+export type Ticket = {
+  id: number,
+  status: TicketStatus,
+  ticketTypeId: number,
+  enrollmentId: number,
+  createdAt: Date,
+  updateAt?: Date,
+  price?: number
+}
+
+export type CardData = {
+  issuer: "VISA" | "MASTERCARD",
+  number: number,
+  name: string,
+  expirationDate: Date,
+  cvv: number
+}

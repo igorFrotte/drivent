@@ -23,3 +23,22 @@ export async function listPayments(req: AuthenticatedRequest, res: Response) {
     return res.sendStatus(httpStatus.UNAUTHORIZED);
   }
 }
+
+export async function createPayment(req: AuthenticatedRequest, res: Response) {
+  const { ticketId, cardData } = req.body;
+  const { userId } = req;
+
+  try {
+    const enrollmentId = (await ticketsService.getTicketById(ticketId)).enrollmentId;
+
+    await paymentService.checkEnrollmentByUser(enrollmentId, userId);
+
+    const ticket = await ticketsService.getTicketByEnrollmentId(enrollmentId);
+    const payment = await paymentService.createPayment(ticket, cardData);
+
+    return res.status(httpStatus.OK).send(payment);
+  } catch (error) {
+    if(error.name === "NotFoundError") return res.sendStatus(httpStatus.NOT_FOUND);
+    return res.sendStatus(httpStatus.UNAUTHORIZED);
+  }
+}
