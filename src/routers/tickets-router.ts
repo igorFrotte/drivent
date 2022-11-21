@@ -1,6 +1,6 @@
-import { listTypes, listTickets, createTicket } from "@/controllers/tickets-controller";
+import { listTypes, listTickets, createTicket } from "@/controllers";
 import { authenticateToken, validateBody } from "@/middlewares";
-import { createTicketSchema } from "@/schemas/tickets-schema";
+import { createTicketSchema } from "@/schemas";
 import { Router } from "express";
 
 const ticketsRouter = Router();

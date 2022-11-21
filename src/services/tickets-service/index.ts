@@ -34,7 +34,8 @@ async function getTicketById( id: number) {
 const ticketsService = {
   listTypes,
   getTicketByEnrollmentId,
-  createTicket
+  createTicket,
+  getTicketById
 };
 
 export default ticketsService;
