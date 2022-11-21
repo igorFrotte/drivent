@@ -16,9 +16,25 @@ async function getTicketByEnrollmentId(id: number): Promise<Ticket> {
   return ticket;
 }
 
+async function createTicket( enrollmentId: number, ticketTypeId: number): Promise<Ticket> {
+  const ticketId = await ticketRepository.insertTicket(enrollmentId, ticketTypeId);
+  const ticket = await getTicketById(ticketId);
+  
+  return ticket;
+}
+
+async function getTicketById( id: number) {
+  const ticket = await ticketRepository.findTicketById(id);
+
+  if(!ticket) throw notFoundError();
+
+  return ticket;
+}
+
 const ticketsService = {
   listTypes,
-  getTicketByEnrollmentId
+  getTicketByEnrollmentId,
+  createTicket
 };
 
 export default ticketsService;
