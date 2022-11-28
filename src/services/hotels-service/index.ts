@@ -5,17 +5,17 @@ export async function getHotels() {
   return await hotelRepository.findHotels();
 }
 
-export async function getRooms(id: number) {
-  const hotelRooms = await hotelRepository.findRooms(id);
+export async function getHotelRooms(id: number) {
+  const hotelRooms = await hotelRepository.findHotelRooms(id);
 
-  if(!hotelRooms.length) throw notFoundError();
+  if(!hotelRooms) throw notFoundError();
 
   return hotelRooms;
 }
 
 const hotelService = {
   getHotels,
-  getRooms
+  getHotelRooms
 };
     
 export default hotelService;

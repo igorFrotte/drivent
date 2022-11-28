@@ -182,20 +182,27 @@ describe("GET /hotels/:hotelId", () => {
       const ticketType = await createTicketType(false, true);
       await createTicket(enrollment.id, ticketType.id, TicketStatus.PAID);
       const hotel = await createHotel();
-      await createRoom(hotel.id); 
+      const room = await createRoom(hotel.id); 
       const response = await server.get(`/hotels/${hotel.id}`).set("Authorization", `Bearer ${token}`);
   
       expect(response.status).toBe(httpStatus.OK);
-      expect(response.body).toEqual(expect.arrayContaining([
-        expect.objectContaining({
-          id: expect.any(Number),
-          name: expect.any(String),
-          capacity: expect.any(Number),
-          hotelId: expect.any(Number),
-          createdAt: expect.any(String),
-          updatedAt: expect.any(String),
-        })
-      ]));
+      expect(response.body).toEqual({
+        id: hotel.id,
+        name: hotel.name,
+        image: hotel.image,
+        createdAt: hotel.createdAt.toISOString(),
+        updatedAt: hotel.updatedAt.toISOString(),
+        Rooms: [
+          {
+            id: room.id,
+            name: expect.any(String),
+            capacity: room.capacity,
+            hotelId: hotel.id,
+            createdAt: expect.any(String),
+            updatedAt: expect.any(String),
+          },
+        ],
+      });
     });
   });
 });
