@@ -1,6 +1,7 @@
 import { AuthenticatedRequest, generateUnauthorizedResponse } from "./authentication-middleware";
 import { NextFunction, Response } from "express";
 import { prisma } from "@/config";
+import httpStatus from "http-status";
 
 export async function userHasHotelAccess( req: AuthenticatedRequest, res: Response, next: NextFunction) {
   const { userId } = req;
@@ -15,7 +16,7 @@ export async function userHasHotelAccess( req: AuthenticatedRequest, res: Respon
       }
     });
 
-    if(!enrollment) return generateUnauthorizedResponse(res);
+    if(!enrollment) return res.status(httpStatus.NOT_FOUND).send();
 
     const ticket = await prisma.ticket.findFirst({
       where: {
@@ -27,7 +28,7 @@ export async function userHasHotelAccess( req: AuthenticatedRequest, res: Respon
     });
 
     if(!ticket || !ticket.TicketType.includesHotel || ticket.status !== "PAID")
-      return generateUnauthorizedResponse(res);
+      return res.status(httpStatus.NOT_FOUND).send();
         
     return next();
   } catch (error) {
