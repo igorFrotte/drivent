@@ -1,7 +1,7 @@
 import { prisma } from "@/config";
 
 async function findHotels() {
-  return prisma;
+  return prisma.hotel.findMany();
 }
 
 const hotelRepository = {
