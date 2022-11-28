@@ -9,6 +9,18 @@ export async function getHotels(req: AuthenticatedRequest, res: Response) {
 
     return res.status(httpStatus.OK).send(hotels);
   } catch (error) {
-    return res.sendStatus(httpStatus.INTERNAL_SERVER_ERROR);
+    return res.sendStatus(httpStatus.NOT_FOUND);
+  }
+}
+
+export async function getRooms(req: AuthenticatedRequest, res: Response) {
+  const hotelId = Number(req.params.hotelId);
+
+  try {
+    const hotelRooms = await hotelService.getRooms(hotelId);
+
+    return res.status(httpStatus.OK).send(hotelRooms);
+  } catch (error) {
+    return res.sendStatus(httpStatus.NOT_FOUND);
   }
 }
