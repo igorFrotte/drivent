@@ -1,26 +1,37 @@
+import { Response } from "express";
 import { AuthenticatedRequest } from "@/middlewares";
 import hotelService from "@/services/hotels-service";
-import { Response } from "express";
 import httpStatus from "http-status";
 
 export async function getHotels(req: AuthenticatedRequest, res: Response) {
-  try {
-    const hotels = await hotelService.getHotels();
+  const { userId } = req;
 
+  try {
+    const hotels = await hotelService.getHotels(Number(userId));
     return res.status(httpStatus.OK).send(hotels);
   } catch (error) {
-    return res.sendStatus(httpStatus.NOT_FOUND);
+    if (error.name === "NotFoundError") {
+      return res.sendStatus(httpStatus.NOT_FOUND);
+    }
+    return res.sendStatus(httpStatus.PAYMENT_REQUIRED);
   }
 }
 
-export async function getHotelRooms(req: AuthenticatedRequest, res: Response) {
-  const hotelId = Number(req.params.hotelId);
+export async function getHotelsWithRooms(req: AuthenticatedRequest, res: Response) {
+  const { userId } = req;
+  const { hotelId } = req.params;
 
   try {
-    const hotelRooms = await hotelService.getHotelRooms(hotelId);
+    const hotels = await hotelService.getHotelsWithRooms(Number(userId), Number(hotelId));
 
-    return res.status(httpStatus.OK).send(hotelRooms);
+    return res.status(httpStatus.OK).send(hotels);
   } catch (error) {
-    return res.sendStatus(httpStatus.NOT_FOUND);
+    if (error.name === "NotFoundError") {
+      return res.sendStatus(httpStatus.NOT_FOUND);
+    }
+    if (error.name === "CannotListHotelsError") {
+      return res.sendStatus(httpStatus.PAYMENT_REQUIRED);
+    }
+    return res.sendStatus(httpStatus.BAD_REQUEST);
   }
 }
