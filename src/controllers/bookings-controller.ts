@@ -41,3 +41,24 @@ export async function createBooking(req: AuthenticatedRequest, res: Response) {
     return res.sendStatus(httpStatus.INTERNAL_SERVER_ERROR);
   }
 }
+
+export async function updateBooking(req: AuthenticatedRequest, res: Response) {
+  const { userId } = req;
+  const roomId = Number(req.body.roomId);
+  const bookingId = Number(req.params.bookingId);
+  
+  if (!roomId || !bookingId)
+    return res.sendStatus(httpStatus.BAD_REQUEST);
+  
+  try {
+    const booking = await bookingsService.updateBooking(bookingId, roomId, userId);
+  
+    return res.status(httpStatus.OK).send({ roomId: booking.roomId });
+  } catch (error) {
+    if(error.name === "NotFoundError")
+      return res.sendStatus(httpStatus.NOT_FOUND);
+    if(error.name === "CannotListHotelsError" || error.name === "CapacityError")
+      return res.sendStatus(httpStatus.FORBIDDEN);
+    return res.sendStatus(httpStatus.INTERNAL_SERVER_ERROR);
+  }
+}

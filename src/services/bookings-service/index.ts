@@ -28,9 +28,28 @@ async function createBooking(userId: number, roomId: number) {
   return await bookingRepository.createBooking(userId, roomId);
 }
 
+async function updateBooking(bookingId: number, roomId: number, userId: number) {
+  await hotelService.getHotels(userId);
+
+  const room = await roomRepository.findRoomById(roomId);
+  if(!room)
+    throw notFoundError();
+  
+  const bookings = await bookingRepository.findBookingsByRoomId(roomId);
+  if(bookings.length >= room.capacity)
+    throw capacityError();
+      
+  const userBooking = await bookingRepository.findBookingByUserId(userId);
+  if(userBooking.roomId === roomId || !userBooking || userBooking.id !== bookingId)
+    throw capacityError();
+    
+  return await bookingRepository.updateBooking(bookingId, roomId);
+}
+
 const bookingsService = {
   getBooking,
-  createBooking
+  createBooking,
+  updateBooking
 };
 
 export default bookingsService;
