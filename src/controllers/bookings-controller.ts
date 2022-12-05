@@ -27,7 +27,7 @@ export async function createBooking(req: AuthenticatedRequest, res: Response) {
   const roomId = Number(req.body.roomId);
 
   if (!roomId)
-    return res.sendStatus(httpStatus.BAD_REQUEST);
+    return res.sendStatus(httpStatus.NOT_FOUND);
 
   try {
     const booking = await bookingsService.createBooking(userId, roomId);
