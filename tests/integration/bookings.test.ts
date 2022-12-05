@@ -124,7 +124,7 @@ describe("POST /booking", () => {
       const ticket = await createTicket(enrollment.id, ticketType.id, TicketStatus.PAID);
       const payment = await createPayment(ticket.id, ticketType.price);
   
-      const response = await server.post("/booking").set("Authorization", `Bearer ${token}`).send({ roomId: 0 });
+      const response = await server.post("/booking").set("Authorization", `Bearer ${token}`).send({ roomId: -1 });
   
       expect(response.status).toEqual(httpStatus.NOT_FOUND);
     });
@@ -275,7 +275,7 @@ describe("PUT /booking", () => {
       const room = await createRoomWithHotelId(hotel.id);
       const booking = await createBooking(user.id, room.id);
   
-      const response = await server.put(`/booking/${booking.id}`).set("Authorization", `Bearer ${token}`).send({ roomId: 0 });
+      const response = await server.put(`/booking/${booking.id}`).set("Authorization", `Bearer ${token}`).send({ roomId: -1 });
   
       expect(response.status).toEqual(httpStatus.NOT_FOUND);
     });

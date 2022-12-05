@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1670261969322" clover="3.2.0">
-  <project timestamp="1670261969322" name="All files">
-    <metrics statements="657" coveredstatements="587" conditionals="97" coveredconditionals="65" methods="109" coveredmethods="91" elements="863" coveredelements="743" complexity="0" loc="657" ncloc="657" packages="29" files="70" classes="70"/>
+<coverage generated="1670264089962" clover="3.2.0">
+  <project timestamp="1670264089962" name="All files">
+    <metrics statements="639" coveredstatements="589" conditionals="94" coveredconditionals="66" methods="100" coveredmethods="91" elements="833" coveredelements="746" complexity="0" loc="639" ncloc="639" packages="27" files="68" classes="68"/>
     <package name="src">
       <metrics statements="22" coveredstatements="16" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="2"/>
       <file name="app.ts" path="/home/igor/gitProjects/backEnd/drivent/calvs-drivent/src/app.ts">
@@ -59,7 +59,7 @@
       </file>
     </package>
     <package name="src.controllers">
-      <metrics statements="161" coveredstatements="151" conditionals="27" coveredconditionals="23" methods="16" coveredmethods="16"/>
+      <metrics statements="159" coveredstatements="151" conditionals="24" coveredconditionals="22" methods="16" coveredmethods="16"/>
       <file name="authentication-controller.ts" path="/home/igor/gitProjects/backEnd/drivent/calvs-drivent/src/controllers/authentication-controller.ts">
         <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="11" type="stmt"/>
@@ -72,7 +72,7 @@
         <line num="12" count="2" type="stmt"/>
       </file>
       <file name="bookings-controller.ts" path="/home/igor/gitProjects/backEnd/drivent/calvs-drivent/src/controllers/bookings-controller.ts">
-        <metrics statements="37" coveredstatements="32" conditionals="13" coveredconditionals="11" methods="3" coveredmethods="3"/>
+        <metrics statements="35" coveredstatements="32" conditionals="10" coveredconditionals="10" methods="3" coveredmethods="3"/>
         <line num="2" count="11" type="stmt"/>
         <line num="4" count="11" type="stmt"/>
         <line num="6" count="11" type="stmt"/>
@@ -87,12 +87,12 @@
         <line num="26" count="8" type="stmt"/>
         <line num="27" count="8" type="stmt"/>
         <line num="29" count="8" type="cond" truecount="1" falsecount="0"/>
-        <line num="30" count="2" type="stmt"/>
-        <line num="32" count="6" type="stmt"/>
-        <line num="33" count="6" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="32" count="7" type="stmt"/>
+        <line num="33" count="7" type="stmt"/>
         <line num="35" count="1" type="stmt"/>
-        <line num="37" count="5" type="cond" truecount="0" falsecount="1"/>
-        <line num="38" count="0" type="stmt"/>
+        <line num="37" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="38" count="1" type="stmt"/>
         <line num="39" count="5" type="cond" truecount="3" falsecount="0"/>
         <line num="40" count="5" type="stmt"/>
         <line num="41" count="0" type="stmt"/>
@@ -100,16 +100,14 @@
         <line num="46" count="7" type="stmt"/>
         <line num="47" count="7" type="stmt"/>
         <line num="48" count="7" type="stmt"/>
-        <line num="50" count="7" type="cond" truecount="3" falsecount="0"/>
-        <line num="51" count="1" type="stmt"/>
-        <line num="53" count="6" type="stmt"/>
-        <line num="54" count="6" type="stmt"/>
+        <line num="50" count="7" type="stmt"/>
+        <line num="51" count="7" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="55" count="6" type="cond" truecount="1" falsecount="0"/>
         <line num="56" count="1" type="stmt"/>
-        <line num="58" count="5" type="cond" truecount="0" falsecount="1"/>
+        <line num="57" count="5" type="cond" truecount="3" falsecount="0"/>
+        <line num="58" count="5" type="stmt"/>
         <line num="59" count="0" type="stmt"/>
-        <line num="60" count="5" type="cond" truecount="3" falsecount="0"/>
-        <line num="61" count="5" type="stmt"/>
-        <line num="62" count="0" type="stmt"/>
       </file>
       <file name="enrollments-controller.ts" path="/home/igor/gitProjects/backEnd/drivent/calvs-drivent/src/controllers/enrollments-controller.ts">
         <metrics statements="20" coveredstatements="19" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="3"/>
@@ -295,7 +293,7 @@
       <file name="not-found-error.ts" path="/home/igor/gitProjects/backEnd/drivent/calvs-drivent/src/errors/not-found-error.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="11" type="stmt"/>
-        <line num="4" count="13" type="stmt"/>
+        <line num="4" count="15" type="stmt"/>
       </file>
       <file name="request-error.ts" path="/home/igor/gitProjects/backEnd/drivent/calvs-drivent/src/errors/request-error.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -414,7 +412,7 @@
       <file name="index.ts" path="/home/igor/gitProjects/backEnd/drivent/calvs-drivent/src/repositories/enrollment-repository/index.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="1" count="11" type="stmt"/>
-        <line num="5" count="29" type="stmt"/>
+        <line num="5" count="31" type="stmt"/>
         <line num="14" count="6" type="stmt"/>
         <line num="24" count="2" type="stmt"/>
         <line num="36" count="11" type="stmt"/>
@@ -436,7 +434,7 @@
       <file name="index.ts" path="/home/igor/gitProjects/backEnd/drivent/calvs-drivent/src/repositories/hotel-repository/index.ts">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="11" type="stmt"/>
-        <line num="4" count="8" type="stmt"/>
+        <line num="4" count="10" type="stmt"/>
         <line num="8" count="3" type="stmt"/>
         <line num="18" count="11" type="stmt"/>
         <line num="23" count="11" type="stmt"/>
@@ -453,24 +451,12 @@
         <line num="28" count="11" type="stmt"/>
       </file>
     </package>
-    <package name="src.repositories.payments-repository">
-      <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-      <file name="index.ts" path="/home/igor/gitProjects/backEnd/drivent/calvs-drivent/src/repositories/payments-repository/index.ts">
-        <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="37" count="0" type="stmt"/>
-      </file>
-    </package>
     <package name="src.repositories.room-repository">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="index.ts" path="/home/igor/gitProjects/backEnd/drivent/calvs-drivent/src/repositories/room-repository/index.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="11" type="stmt"/>
-        <line num="4" count="6" type="stmt"/>
+        <line num="4" count="8" type="stmt"/>
         <line num="11" count="11" type="stmt"/>
         <line num="15" count="11" type="stmt"/>
       </file>
@@ -494,27 +480,11 @@
         <line num="5" count="2" type="stmt"/>
         <line num="9" count="8" type="stmt"/>
         <line num="19" count="3" type="stmt"/>
-        <line num="30" count="23" type="stmt"/>
+        <line num="30" count="25" type="stmt"/>
         <line num="41" count="2" type="stmt"/>
         <line num="49" count="3" type="stmt"/>
         <line num="61" count="11" type="stmt"/>
         <line num="70" count="11" type="stmt"/>
-      </file>
-    </package>
-    <package name="src.repositories.tickets-repository">
-      <metrics statements="10" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
-      <file name="index.ts" path="/home/igor/gitProjects/backEnd/drivent/calvs-drivent/src/repositories/tickets-repository/index.ts">
-        <metrics statements="10" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="53" count="0" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
-        <line num="69" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.repositories.user-repository">
@@ -719,9 +689,9 @@
       </file>
     </package>
     <package name="src.services.bookings-service">
-      <metrics statements="32" coveredstatements="30" conditionals="10" coveredconditionals="8" methods="3" coveredmethods="3"/>
+      <metrics statements="32" coveredstatements="32" conditionals="10" coveredconditionals="10" methods="3" coveredmethods="3"/>
       <file name="index.ts" path="/home/igor/gitProjects/backEnd/drivent/calvs-drivent/src/services/bookings-service/index.ts">
-        <metrics statements="32" coveredstatements="30" conditionals="10" coveredconditionals="8" methods="3" coveredmethods="3"/>
+        <metrics statements="32" coveredstatements="32" conditionals="10" coveredconditionals="10" methods="3" coveredmethods="3"/>
         <line num="1" count="11" type="stmt"/>
         <line num="2" count="11" type="stmt"/>
         <line num="3" count="11" type="stmt"/>
@@ -730,10 +700,10 @@
         <line num="8" count="3" type="cond" truecount="1" falsecount="0"/>
         <line num="9" count="2" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
-        <line num="14" count="6" type="stmt"/>
-        <line num="16" count="3" type="stmt"/>
-        <line num="17" count="3" type="cond" truecount="0" falsecount="1"/>
-        <line num="18" count="0" type="stmt"/>
+        <line num="14" count="7" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="17" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="18" count="1" type="stmt"/>
         <line num="20" count="3" type="stmt"/>
         <line num="21" count="3" type="cond" truecount="1" falsecount="0"/>
         <line num="22" count="1" type="stmt"/>
@@ -741,10 +711,10 @@
         <line num="25" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="26" count="1" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
-        <line num="32" count="6" type="stmt"/>
-        <line num="34" count="3" type="stmt"/>
-        <line num="35" count="3" type="cond" truecount="0" falsecount="1"/>
-        <line num="36" count="0" type="stmt"/>
+        <line num="32" count="7" type="stmt"/>
+        <line num="34" count="4" type="stmt"/>
+        <line num="35" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="36" count="1" type="stmt"/>
         <line num="38" count="3" type="stmt"/>
         <line num="39" count="3" type="cond" truecount="1" falsecount="0"/>
         <line num="40" count="1" type="stmt"/>
@@ -820,15 +790,15 @@
         <line num="3" count="11" type="stmt"/>
         <line num="4" count="11" type="stmt"/>
         <line num="5" count="11" type="stmt"/>
-        <line num="9" count="21" type="stmt"/>
-        <line num="10" count="21" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="23" type="stmt"/>
+        <line num="10" count="23" type="cond" truecount="1" falsecount="0"/>
         <line num="11" count="2" type="stmt"/>
-        <line num="14" count="19" type="stmt"/>
-        <line num="16" count="19" type="cond" truecount="5" falsecount="0"/>
+        <line num="14" count="21" type="stmt"/>
+        <line num="16" count="21" type="cond" truecount="5" falsecount="0"/>
         <line num="17" count="8" type="stmt"/>
-        <line num="22" count="16" type="stmt"/>
-        <line num="24" count="8" type="stmt"/>
-        <line num="25" count="8" type="stmt"/>
+        <line num="22" count="18" type="stmt"/>
+        <line num="24" count="10" type="stmt"/>
+        <line num="25" count="10" type="stmt"/>
         <line num="29" count="5" type="stmt"/>
         <line num="30" count="3" type="stmt"/>
         <line num="32" count="3" type="cond" truecount="1" falsecount="0"/>
